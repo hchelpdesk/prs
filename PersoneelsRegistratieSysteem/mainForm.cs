@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using PersoneelsRegistratieSysteem.Login;
 using PersoneelsRegistratieSysteem.Personeel;
+using PersoneelsRegistratieSysteem.Urenregistratie;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,12 @@ namespace PersoneelsRegistratieSysteem
 {
     public partial class mainForm : Form
     {
+        private MySqlConnection connection;
+        private string server;
+        private string database;
+        private string uid;
+        private string password;
+        private MySqlDataAdapter mySqlDataAdapter;
 
         public mainForm()
         {
@@ -32,25 +39,52 @@ namespace PersoneelsRegistratieSysteem
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            //VarribleKeeper.MySQLConnectionString = your connection string
-            //info being your table name
-            MySqlConnection mysqlCon = new
+          
+        }
 
-            MySqlConnection("Server=dennis.vanginkel.eu;Database=dennisvang_prs;Uid=dennisvang_denn;Pwd=dennisg#22;");
-            mysqlCon.Open();
+        //Close connection
+        private bool CloseConnection()
+        {
+            try
+            {
+                connection.Close();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
 
-            MySqlDataAdapter MyDA = new MySqlDataAdapter();
-            string sqlSelectAll = "SELECT * from verlof";
-            MyDA.SelectCommand = new MySqlCommand(sqlSelectAll, mysqlCon);
-
-            DataTable table = new DataTable();
-            MyDA.Fill(table);
-
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = table;
-
-
-            verlofdvg.DataSource = bSource;
+        //open connection to database
+        private bool OpenConnection()
+        {
+            try
+            {
+                connection.Open();
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                //When handling errors, you can your application's response based on the error number.
+                //The two most common error numbers when connecting are as follows:
+                //0: Cannot connect to server.
+                //1045: Invalid user name and/or password.
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("Cannot connect to server. Contact administrator");
+                        break;
+                    case 1045:
+                        MessageBox.Show("Invalid username/password, please try again");
+                        break;
+                    default:
+                        MessageBox.Show(ex.Message);
+                        break;
+                }
+                return false;
+            }
         }
 
         private void medewerkerToevoegenToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,11 +94,21 @@ namespace PersoneelsRegistratieSysteem
             newMDIChild.MdiParent = this;
             // Display the new form.
             newMDIChild.Show();
+            Focus();
         }
 
         private void toevoegenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             personeel_toevoegen newMDIChild = new personeel_toevoegen();
+            // Set the Parent Form of the Child window.
+            newMDIChild.MdiParent = this;
+            // Display the new form.
+            newMDIChild.Show();
+        }
+
+        private void invoerenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toevoegen newMDIChild = new toevoegen();
             // Set the Parent Form of the Child window.
             newMDIChild.MdiParent = this;
             // Display the new form.

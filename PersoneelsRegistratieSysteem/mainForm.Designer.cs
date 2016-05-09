@@ -34,20 +34,16 @@
             this.personeelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medewerkerToevoegenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toevoegenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verlofToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.overzichtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toevoegenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.magazijnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overzichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoerenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verlofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tODOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verlofToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.overzichtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toevoegenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.verlofdvg = new System.Windows.Forms.DataGridView();
             this.mainForm_menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.verlofdvg)).BeginInit();
             this.SuspendLayout();
             // 
             // mainForm_menuStrip1
@@ -91,16 +87,37 @@
             // medewerkerToevoegenToolStripMenuItem
             // 
             this.medewerkerToevoegenToolStripMenuItem.Name = "medewerkerToevoegenToolStripMenuItem";
-            this.medewerkerToevoegenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medewerkerToevoegenToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.medewerkerToevoegenToolStripMenuItem.Text = "Overzicht";
             this.medewerkerToevoegenToolStripMenuItem.Click += new System.EventHandler(this.medewerkerToevoegenToolStripMenuItem_Click);
             // 
             // toevoegenToolStripMenuItem
             // 
             this.toevoegenToolStripMenuItem.Name = "toevoegenToolStripMenuItem";
-            this.toevoegenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.toevoegenToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.toevoegenToolStripMenuItem.Text = "Toevoegen";
             this.toevoegenToolStripMenuItem.Click += new System.EventHandler(this.toevoegenToolStripMenuItem_Click);
+            // 
+            // verlofToolStripMenuItem1
+            // 
+            this.verlofToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.overzichtToolStripMenuItem1,
+            this.toevoegenToolStripMenuItem1});
+            this.verlofToolStripMenuItem1.Name = "verlofToolStripMenuItem1";
+            this.verlofToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
+            this.verlofToolStripMenuItem1.Text = "Verlof";
+            // 
+            // overzichtToolStripMenuItem1
+            // 
+            this.overzichtToolStripMenuItem1.Name = "overzichtToolStripMenuItem1";
+            this.overzichtToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
+            this.overzichtToolStripMenuItem1.Text = "Overzicht";
+            // 
+            // toevoegenToolStripMenuItem1
+            // 
+            this.toevoegenToolStripMenuItem1.Name = "toevoegenToolStripMenuItem1";
+            this.toevoegenToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
+            this.toevoegenToolStripMenuItem1.Text = "Toevoegen";
             // 
             // magazijnToolStripMenuItem
             // 
@@ -115,19 +132,20 @@
             // overzichtToolStripMenuItem
             // 
             this.overzichtToolStripMenuItem.Name = "overzichtToolStripMenuItem";
-            this.overzichtToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.overzichtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.overzichtToolStripMenuItem.Text = "Overzicht";
             // 
             // invoerenToolStripMenuItem
             // 
             this.invoerenToolStripMenuItem.Name = "invoerenToolStripMenuItem";
-            this.invoerenToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.invoerenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.invoerenToolStripMenuItem.Text = "Invoeren";
+            this.invoerenToolStripMenuItem.Click += new System.EventHandler(this.invoerenToolStripMenuItem_Click);
             // 
             // verlofToolStripMenuItem
             // 
             this.verlofToolStripMenuItem.Name = "verlofToolStripMenuItem";
-            this.verlofToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.verlofToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.verlofToolStripMenuItem.Text = "Verlof";
             // 
             // loginToolStripMenuItem
@@ -143,56 +161,12 @@
             this.tODOToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.tODOToolStripMenuItem.Text = "TODO";
             // 
-            // verlofToolStripMenuItem1
-            // 
-            this.verlofToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.overzichtToolStripMenuItem1,
-            this.toevoegenToolStripMenuItem1});
-            this.verlofToolStripMenuItem1.Name = "verlofToolStripMenuItem1";
-            this.verlofToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.verlofToolStripMenuItem1.Text = "Verlof";
-            // 
-            // overzichtToolStripMenuItem1
-            // 
-            this.overzichtToolStripMenuItem1.Name = "overzichtToolStripMenuItem1";
-            this.overzichtToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.overzichtToolStripMenuItem1.Text = "Overzicht";
-            // 
-            // toevoegenToolStripMenuItem1
-            // 
-            this.toevoegenToolStripMenuItem1.Name = "toevoegenToolStripMenuItem1";
-            this.toevoegenToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.toevoegenToolStripMenuItem1.Text = "Toevoegen";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.verlofdvg);
-            this.groupBox1.Location = new System.Drawing.Point(467, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(541, 178);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Verlof";
-            // 
-            // verlofdvg
-            // 
-            this.verlofdvg.AllowUserToAddRows = false;
-            this.verlofdvg.AllowUserToDeleteRows = false;
-            this.verlofdvg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.verlofdvg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.verlofdvg.Location = new System.Drawing.Point(3, 16);
-            this.verlofdvg.Name = "verlofdvg";
-            this.verlofdvg.ReadOnly = true;
-            this.verlofdvg.Size = new System.Drawing.Size(535, 159);
-            this.verlofdvg.TabIndex = 8;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1008, 730);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1008, 726);
             this.Controls.Add(this.mainForm_menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.IsMdiContainer = true;
@@ -206,8 +180,6 @@
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.mainForm_menuStrip1.ResumeLayout(false);
             this.mainForm_menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.verlofdvg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,8 +202,6 @@
         private System.Windows.Forms.ToolStripMenuItem verlofToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem overzichtToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toevoegenToolStripMenuItem1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView verlofdvg;
     }
 }
 

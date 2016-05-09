@@ -45,9 +45,8 @@
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(652, 262);
+            this.dataGridView1.Size = new System.Drawing.Size(682, 262);
             this.dataGridView1.TabIndex = 0;
-            
             // 
             // mySqlGeometryBindingSource
             // 
@@ -58,7 +57,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(652, 262);
+            this.ClientSize = new System.Drawing.Size(682, 262);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;

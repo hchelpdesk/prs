@@ -39,7 +39,7 @@ namespace PersoneelsRegistratieSysteem
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-          
+            
         }
 
         //Close connection

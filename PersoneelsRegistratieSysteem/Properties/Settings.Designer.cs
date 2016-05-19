@@ -33,5 +33,29 @@ namespace PersoneelsRegistratieSysteem.Properties {
                 return ((string)(this["prsdbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string loginusername {
+            get {
+                return ((string)(this["loginusername"]));
+            }
+            set {
+                this["loginusername"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string loginpassword {
+            get {
+                return ((string)(this["loginpassword"]));
+            }
+            set {
+                this["loginpassword"] = value;
+            }
+        }
     }
 }

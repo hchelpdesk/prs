@@ -31,20 +31,20 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.urenreg_cmbboxemployees = new System.Windows.Forms.ComboBox();
             this.gewerkteuren_combobox = new System.Windows.Forms.GroupBox();
+            this.urenregistratie_add_btn = new System.Windows.Forms.Button();
             this.urenregistratie_eindtijd_combobox = new System.Windows.Forms.ComboBox();
             this.urenregistratie_begintijd_combobx = new System.Windows.Forms.ComboBox();
-            this.urenregistratie_dag_combobx = new System.Windows.Forms.ComboBox();
             this.urenregistratie_datum_combobx = new System.Windows.Forms.ComboBox();
+            this.urenregistratie_dag_combobx = new System.Windows.Forms.ComboBox();
             this.urenregistratie_eindtijd_lbl = new System.Windows.Forms.Label();
             this.urenregistratie_begintijd_lbl = new System.Windows.Forms.Label();
             this.urenregistratie_dag_lbl = new System.Windows.Forms.Label();
             this.urenregistratie_datum_lbl = new System.Windows.Forms.Label();
-            this.urenregistratie_add_btn = new System.Windows.Forms.Button();
             this.gewerkte_uren_combobox = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.gewerkteuren_combobox.SuspendLayout();
             this.gewerkte_uren_combobox.SuspendLayout();
@@ -90,6 +90,17 @@
             this.gewerkteuren_combobox.Text = "Gewerkte uren";
             this.gewerkteuren_combobox.Visible = false;
             // 
+            // urenregistratie_add_btn
+            // 
+            this.urenregistratie_add_btn.Location = new System.Drawing.Point(474, 38);
+            this.urenregistratie_add_btn.Name = "urenregistratie_add_btn";
+            this.urenregistratie_add_btn.Size = new System.Drawing.Size(75, 23);
+            this.urenregistratie_add_btn.TabIndex = 8;
+            this.urenregistratie_add_btn.Text = "Add";
+            this.urenregistratie_add_btn.UseVisualStyleBackColor = true;
+            this.urenregistratie_add_btn.Visible = false;
+            this.urenregistratie_add_btn.Click += new System.EventHandler(this.urenregistratie_add_btn_Click);
+            // 
             // urenregistratie_eindtijd_combobox
             // 
             this.urenregistratie_eindtijd_combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -112,17 +123,6 @@
             this.urenregistratie_begintijd_combobx.Visible = false;
             this.urenregistratie_begintijd_combobx.SelectedIndexChanged += new System.EventHandler(this.urenregistratie_begintijd_combobx_SelectedIndexChanged);
             // 
-            // urenregistratie_dag_combobx
-            // 
-            this.urenregistratie_dag_combobx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.urenregistratie_dag_combobx.FormattingEnabled = true;
-            this.urenregistratie_dag_combobx.Location = new System.Drawing.Point(92, 41);
-            this.urenregistratie_dag_combobx.Name = "urenregistratie_dag_combobx";
-            this.urenregistratie_dag_combobx.Size = new System.Drawing.Size(121, 21);
-            this.urenregistratie_dag_combobx.TabIndex = 5;
-            this.urenregistratie_dag_combobx.Visible = false;
-            this.urenregistratie_dag_combobx.SelectedIndexChanged += new System.EventHandler(this.urenregistratie_dag_combobx_SelectedIndexChanged);
-            // 
             // urenregistratie_datum_combobx
             // 
             this.urenregistratie_datum_combobx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -133,6 +133,17 @@
             this.urenregistratie_datum_combobx.TabIndex = 4;
             this.urenregistratie_datum_combobx.Visible = false;
             this.urenregistratie_datum_combobx.SelectedIndexChanged += new System.EventHandler(this.urenregistratie_datum_combobx_SelectedIndexChanged);
+            // 
+            // urenregistratie_dag_combobx
+            // 
+            this.urenregistratie_dag_combobx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.urenregistratie_dag_combobx.FormattingEnabled = true;
+            this.urenregistratie_dag_combobx.Location = new System.Drawing.Point(92, 41);
+            this.urenregistratie_dag_combobx.Name = "urenregistratie_dag_combobx";
+            this.urenregistratie_dag_combobx.Size = new System.Drawing.Size(121, 21);
+            this.urenregistratie_dag_combobx.TabIndex = 5;
+            this.urenregistratie_dag_combobx.Visible = false;
+            this.urenregistratie_dag_combobx.SelectedIndexChanged += new System.EventHandler(this.urenregistratie_dag_combobx_SelectedIndexChanged);
             // 
             // urenregistratie_eindtijd_lbl
             // 
@@ -174,17 +185,6 @@
             this.urenregistratie_datum_lbl.Text = "Datum";
             this.urenregistratie_datum_lbl.Visible = false;
             // 
-            // urenregistratie_add_btn
-            // 
-            this.urenregistratie_add_btn.Location = new System.Drawing.Point(474, 38);
-            this.urenregistratie_add_btn.Name = "urenregistratie_add_btn";
-            this.urenregistratie_add_btn.Size = new System.Drawing.Size(75, 23);
-            this.urenregistratie_add_btn.TabIndex = 8;
-            this.urenregistratie_add_btn.Text = "Add";
-            this.urenregistratie_add_btn.UseVisualStyleBackColor = true;
-            this.urenregistratie_add_btn.Visible = false;
-            this.urenregistratie_add_btn.Click += new System.EventHandler(this.urenregistratie_add_btn_Click);
-            // 
             // gewerkte_uren_combobox
             // 
             this.gewerkte_uren_combobox.Controls.Add(this.button3);
@@ -199,6 +199,35 @@
             this.gewerkte_uren_combobox.Text = "Gewerkte Uren";
             this.gewerkte_uren_combobox.Visible = false;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(450, 79);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(99, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Save to DB";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(450, 49);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(99, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Remove All";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(450, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Remove 1 Item";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -212,35 +241,6 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(406, 82);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(450, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Remove 1 Item";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(450, 49);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Remove All";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(450, 79);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Save to DB";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // toevoegen
             // 

@@ -14,8 +14,9 @@ c:\users\administrator\documents\visual studio 2015\Projects\PersoneelsRegistrat
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\bin\Debug\PersoneelsRegistratieSysteem.exe.config
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\bin\Debug\PersoneelsRegistratieSysteem.exe
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\bin\Debug\PersoneelsRegistratieSysteem.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\bin\Debug\PersoneelsRegistratieSysteem.exe.CodeAnalysisLog.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\bin\Debug\PersoneelsRegistratieSysteem.exe.lastcodeanalysissucceeded
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\bin\Debug\MySql.Data.dll
-C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\obj\Debug\PersoneelsRegistratieSysteem.csprojResolveAssemblyReference.cache
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\obj\Debug\PersoneelsRegistratieSysteem.mainForm.resources
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\obj\Debug\PersoneelsRegistratieSysteem.Login.login.resources
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\obj\Debug\PersoneelsRegistratieSysteem.Personeel.personeel_overzicht.resources

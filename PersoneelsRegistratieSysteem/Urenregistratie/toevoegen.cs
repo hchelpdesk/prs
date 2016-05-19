@@ -1,12 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PersoneelsRegistratieSysteem.Urenregistratie
@@ -22,7 +16,9 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
         {
             #region medewerker_combobox
             // Werknemers ophalen uit de DB en in combobox weergeven.
-            var connectionString = "Server=dennis.vanginkel.eu;Database=dennisvang_prs;Uid=dennisvang_denn;Pwd=dennisg#22;";
+            var connectionString = "server=127.0.0.1;Port=3307; uid=root; pwd=usbw; database=test; ";
+            
+
             using (var connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
@@ -35,6 +31,7 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
                         {
                             var voorenachternaam = reader.GetString("basisinfo_roepnaam") + " " + reader.GetString("basisinfo_achternaam");
                             urenreg_cmbboxemployees.Items.Add(voorenachternaam);
+                            MessageBox.Show(voorenachternaam);
                         }
                     }
                 }

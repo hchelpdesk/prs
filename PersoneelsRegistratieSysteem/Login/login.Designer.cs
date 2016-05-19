@@ -67,6 +67,7 @@
             // 
             this.login_wachtwoordtxtbox.Location = new System.Drawing.Point(142, 212);
             this.login_wachtwoordtxtbox.Name = "login_wachtwoordtxtbox";
+            this.login_wachtwoordtxtbox.PasswordChar = '*';
             this.login_wachtwoordtxtbox.Size = new System.Drawing.Size(86, 20);
             this.login_wachtwoordtxtbox.TabIndex = 3;
             // 
@@ -79,6 +80,7 @@
             this.login_inloggenbtn.TabIndex = 4;
             this.login_inloggenbtn.Text = "Inloggen";
             this.login_inloggenbtn.UseVisualStyleBackColor = false;
+            this.login_inloggenbtn.Click += new System.EventHandler(this.login_inloggenbtn_Click);
             // 
             // login_cancelbtn
             // 

@@ -80,6 +80,7 @@
             this.medewerkerToevoegenToolStripMenuItem,
             this.toevoegenToolStripMenuItem,
             this.verlofToolStripMenuItem1});
+            this.personeelToolStripMenuItem.Enabled = false;
             this.personeelToolStripMenuItem.Name = "personeelToolStripMenuItem";
             this.personeelToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.personeelToolStripMenuItem.Text = "Personeel";
@@ -87,14 +88,14 @@
             // medewerkerToevoegenToolStripMenuItem
             // 
             this.medewerkerToevoegenToolStripMenuItem.Name = "medewerkerToevoegenToolStripMenuItem";
-            this.medewerkerToevoegenToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.medewerkerToevoegenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medewerkerToevoegenToolStripMenuItem.Text = "Overzicht";
             this.medewerkerToevoegenToolStripMenuItem.Click += new System.EventHandler(this.medewerkerToevoegenToolStripMenuItem_Click);
             // 
             // toevoegenToolStripMenuItem
             // 
             this.toevoegenToolStripMenuItem.Name = "toevoegenToolStripMenuItem";
-            this.toevoegenToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.toevoegenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.toevoegenToolStripMenuItem.Text = "Toevoegen";
             this.toevoegenToolStripMenuItem.Click += new System.EventHandler(this.toevoegenToolStripMenuItem_Click);
             // 
@@ -104,7 +105,7 @@
             this.overzichtToolStripMenuItem1,
             this.toevoegenToolStripMenuItem1});
             this.verlofToolStripMenuItem1.Name = "verlofToolStripMenuItem1";
-            this.verlofToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
+            this.verlofToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.verlofToolStripMenuItem1.Text = "Verlof";
             // 
             // overzichtToolStripMenuItem1
@@ -157,6 +158,7 @@
             // 
             // tODOToolStripMenuItem
             // 
+            this.tODOToolStripMenuItem.Enabled = false;
             this.tODOToolStripMenuItem.Name = "tODOToolStripMenuItem";
             this.tODOToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.tODOToolStripMenuItem.Text = "TODO";

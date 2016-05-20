@@ -138,6 +138,12 @@
             // 
             this.urenregistratie_dag_combobx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.urenregistratie_dag_combobx.FormattingEnabled = true;
+            this.urenregistratie_dag_combobx.Items.AddRange(new object[] {
+            "Maandag",
+            "Dinsdag",
+            "Woensdag",
+            "Donderdag",
+            "Vrijdag"});
             this.urenregistratie_dag_combobx.Location = new System.Drawing.Point(92, 41);
             this.urenregistratie_dag_combobx.Name = "urenregistratie_dag_combobx";
             this.urenregistratie_dag_combobx.Size = new System.Drawing.Size(121, 21);
@@ -207,6 +213,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Save to DB";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 

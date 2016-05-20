@@ -17,7 +17,7 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
             #region medewerker_combobox
             // Werknemers ophalen uit de DB en in combobox weergeven.
             var connectionString = "server=127.0.0.1;Port=3307; uid=root; pwd=usbw; database=test; ";
-            
+
 
             using (var connection = new MySqlConnection(connectionString))
             {
@@ -31,7 +31,6 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
                         {
                             var voorenachternaam = reader.GetString("basisinfo_roepnaam") + " " + reader.GetString("basisinfo_achternaam");
                             urenreg_cmbboxemployees.Items.Add(voorenachternaam);
-                            MessageBox.Show(voorenachternaam);
                         }
                     }
                 }
@@ -60,7 +59,7 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
             int currentYear = now.Year;
             int currentday = now.Day;
             MessageBox.Show(currentday.ToString());
-          
+
 
             // Kijken hoeveel dagen er in de Huidige maand zitten. 
             int DaysinCurrMonth = DateTime.DaysInMonth(currentYear, currentmonth);
@@ -86,12 +85,20 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
                 if (checkday.DayOfWeek != DayOfWeek.Saturday && checkday.DayOfWeek != DayOfWeek.Sunday)
                 {
                     string currentdate = i + "-" + currentmonth + "-" + currentYear;
-                    urenregistratie_datum_combobx.Items.Add(currentdate);
-                    urenregistratie_dag_combobx.Items.Add(checkday.DayOfWeek.ToString());
+                    urenregistratie_datum_combobx.Items.Add(currentdate); // datum in 01-01-1970 notatie
+
+                    // Naam van Engels omzetten naar Nederlands en toevoegen aan combobox
+                    var englishname = checkday.DayOfWeek.ToString();
+                    var dutch = new System.Globalization.CultureInfo("nl-NL");
+                    var dutchname = dutch.DateTimeFormat.GetDayName();
+
+                    urenregistratie_dag_combobx.Items.Add(englishname);
+                    
+                    
                 }
 
 
-               
+
             }
             #endregion
         }
@@ -99,6 +106,7 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
         private void urenregistratie_datum_combobx_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+
             urenregistratie_dag_combobx.Visible = true;
             urenregistratie_dag_lbl.Visible = true;
 
@@ -149,7 +157,8 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
                 dataGridView1.Columns[4].Name = "Medewerker";
 
 
-                string[] row = new string[] { urenregistratie_dag_combobx.SelectedItem.ToString(), urenregistratie_datum_combobx.SelectedItem.ToString(), urenregistratie_begintijd_combobx.SelectedItem.ToString(), urenregistratie_eindtijd_combobox.SelectedItem.ToString(), urenreg_cmbboxemployees.SelectedItem.ToString() }; dataGridView1.Rows.Add(row);
+                string[] row = new string[] { urenregistratie_dag_combobx.SelectedItem.ToString(), urenregistratie_datum_combobx.SelectedItem.ToString(), urenregistratie_begintijd_combobx.SelectedItem.ToString(), urenregistratie_eindtijd_combobox.SelectedItem.ToString(), urenreg_cmbboxemployees.SelectedItem.ToString() };
+                dataGridView1.Rows.Add(row);
                 /*
                 DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
                 cmb.HeaderText = "Select Data";
@@ -160,6 +169,8 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
                 dataGridView1.Columns.Add(cmb);
                 */
                 this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                urenregistratie_datum_combobx.Items.Remove(urenregistratie_datum_combobx.SelectedItem);
+                urenregistratie_dag_combobx.Items.Remove(urenregistratie_dag_combobx.SelectedItem);
 
                 gewerkte_uren_combobox.Visible = true;
             }
@@ -182,5 +193,37 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
         {
             urenregistratie_add_btn.Visible = true;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string MyConnectionString = "Server=127.0.0.1; Port=3307; Database=test; Uid=root; Pwd=usbw";
+            MySqlConnection connection = new MySqlConnection(MyConnectionString);
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd = connection.CreateCommand();
+                    if (row.IsNewRow) continue;
+                    cmd.Parameters.AddWithValue("@Datum", row.Cells["Datum"].Value);
+                    cmd.Parameters.AddWithValue("@Dag", row.Cells["Dag"].Value);
+                    cmd.Parameters.AddWithValue("@Start", row.Cells["Start"].Value);
+                    cmd.Parameters.AddWithValue("@Eind", row.Cells["Eind"].Value);
+                    cmd.Parameters.AddWithValue("@Medewerker", row.Cells["Medewerker"].Value);
+
+                    cmd.CommandText = "INSERT INTO urenregistratie(datum, dag, begintijd, eindtijd, medewerker)VALUES(@dag, @datum, @Start, @Eind, @Medewerker)";
+                    connection.Open();
+                    cmd.ExecuteNonQuery();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            MessageBox.Show("Records inserted.");
+        }
+
     }
 }

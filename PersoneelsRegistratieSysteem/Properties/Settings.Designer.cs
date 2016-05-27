@@ -57,5 +57,113 @@ namespace PersoneelsRegistratieSysteem.Properties {
                 this["loginpassword"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbsettings_provider {
+            get {
+                return ((string)(this["dbsettings_provider"]));
+            }
+            set {
+                this["dbsettings_provider"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbsettings_connectiontype {
+            get {
+                return ((string)(this["dbsettings_connectiontype"]));
+            }
+            set {
+                this["dbsettings_connectiontype"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbsettings_hostnameip {
+            get {
+                return ((string)(this["dbsettings_hostnameip"]));
+            }
+            set {
+                this["dbsettings_hostnameip"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbsettings_port {
+            get {
+                return ((string)(this["dbsettings_port"]));
+            }
+            set {
+                this["dbsettings_port"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbsettings_username {
+            get {
+                return ((string)(this["dbsettings_username"]));
+            }
+            set {
+                this["dbsettings_username"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbsettings_password {
+            get {
+                return ((string)(this["dbsettings_password"]));
+            }
+            set {
+                this["dbsettings_password"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dbsettings_database {
+            get {
+                return ((string)(this["dbsettings_database"]));
+            }
+            set {
+                this["dbsettings_database"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MSSQLconnectionstring {
+            get {
+                return ((string)(this["MSSQLconnectionstring"]));
+            }
+            set {
+                this["MSSQLconnectionstring"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MYSQLconnectionstring {
+            get {
+                return ((string)(this["MYSQLconnectionstring"]));
+            }
+            set {
+                this["MYSQLconnectionstring"] = value;
+            }
+        }
     }
 }

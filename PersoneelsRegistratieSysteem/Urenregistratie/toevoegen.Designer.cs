@@ -199,7 +199,7 @@
             this.gewerkte_uren_combobox.Controls.Add(this.dataGridView1);
             this.gewerkte_uren_combobox.Location = new System.Drawing.Point(12, 175);
             this.gewerkte_uren_combobox.Name = "gewerkte_uren_combobox";
-            this.gewerkte_uren_combobox.Size = new System.Drawing.Size(560, 119);
+            this.gewerkte_uren_combobox.Size = new System.Drawing.Size(560, 161);
             this.gewerkte_uren_combobox.TabIndex = 3;
             this.gewerkte_uren_combobox.TabStop = false;
             this.gewerkte_uren_combobox.Text = "Gewerkte Uren";
@@ -246,18 +246,22 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(406, 82);
+            this.dataGridView1.Size = new System.Drawing.Size(406, 127);
             this.dataGridView1.TabIndex = 0;
             // 
             // toevoegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 478);
+            this.ClientSize = new System.Drawing.Size(582, 363);
             this.Controls.Add(this.gewerkte_uren_combobox);
             this.Controls.Add(this.gewerkteuren_combobox);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "toevoegen";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Uren Registratie - Toevoegen";
             this.Load += new System.EventHandler(this.toevoegen_Load);
             this.groupBox1.ResumeLayout(false);

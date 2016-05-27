@@ -58,7 +58,7 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
             int currentmonth = now.Month;
             int currentYear = now.Year;
             int currentday = now.Day;
-            MessageBox.Show(currentday.ToString());
+            //MessageBox.Show(currentday.ToString());
 
 
             // Kijken hoeveel dagen er in de Huidige maand zitten. 
@@ -90,26 +90,18 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
                     // Naam van Engels omzetten naar Nederlands en toevoegen aan combobox
                     var englishname = checkday.DayOfWeek.ToString();
                     var dutch = new System.Globalization.CultureInfo("nl-NL");
-                    var dutchname = dutch.DateTimeFormat.GetDayName();
+                    //var dutchname = dutch.DateTimeFormat.GetDayName();
 
-                    urenregistratie_dag_combobx.Items.Add(englishname);
-                    
-                    
+                    //urenregistratie_dag_combobx.Items.Add(englishname);
                 }
-
-
-
             }
             #endregion
         }
 
         private void urenregistratie_datum_combobx_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
-
             urenregistratie_dag_combobx.Visible = true;
             urenregistratie_dag_lbl.Visible = true;
-
         }
 
         private void urenregistratie_dag_combobx_SelectedIndexChanged(object sender, EventArgs e)
@@ -170,7 +162,7 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
                 */
                 this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 urenregistratie_datum_combobx.Items.Remove(urenregistratie_datum_combobx.SelectedItem);
-                urenregistratie_dag_combobx.Items.Remove(urenregistratie_dag_combobx.SelectedItem);
+                //urenregistratie_dag_combobx.Items.Remove(urenregistratie_dag_combobx.SelectedItem);
 
                 gewerkte_uren_combobox.Visible = true;
             }
@@ -222,7 +214,8 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
                     MessageBox.Show(ex.Message);
                 }
             }
-            MessageBox.Show("Records inserted.");
+            MessageBox.Show("Uren zijn verwerkt.");
+            dataGridView1.Rows.Clear();
         }
 
     }

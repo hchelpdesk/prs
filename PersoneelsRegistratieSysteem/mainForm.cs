@@ -2,6 +2,7 @@
 using PersoneelsRegistratieSysteem.Login;
 using PersoneelsRegistratieSysteem.Personeel;
 using PersoneelsRegistratieSysteem.Urenregistratie;
+using PersoneelsRegistratieSysteem.Settings;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -112,6 +113,22 @@ namespace PersoneelsRegistratieSysteem
             // Set the Parent Form of the Child window.
             newMDIChild.MdiParent = this;
             // Display the new form.
+            newMDIChild.Show();
+        }
+
+        private void verlofToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            verlof newMDIChild = new verlof();
+            // Set the Parent Form of the Child window.
+            newMDIChild.MdiParent = this;
+            // Display the new form.
+            newMDIChild.Show();
+        }
+
+        private void databaseSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            database newMDIChild = new database();
+            newMDIChild.MdiParent = this;
             newMDIChild.Show();
         }
     }

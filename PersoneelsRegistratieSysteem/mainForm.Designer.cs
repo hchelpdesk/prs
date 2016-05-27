@@ -31,18 +31,13 @@
             this.mainForm_menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.bestandToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.afsluitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.personeelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.medewerkerToevoegenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toevoegenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verlofToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.overzichtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toevoegenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.magazijnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overzichtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoerenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verlofToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tODOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainForm_menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,10 +45,9 @@
             // 
             this.mainForm_menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bestandToolStripMenuItem,
-            this.personeelToolStripMenuItem,
             this.magazijnToolStripMenuItem,
             this.loginToolStripMenuItem,
-            this.tODOToolStripMenuItem});
+            this.settingsToolStripMenuItem});
             this.mainForm_menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.mainForm_menuStrip1.Name = "mainForm_menuStrip1";
             this.mainForm_menuStrip1.Size = new System.Drawing.Size(1008, 24);
@@ -71,54 +65,8 @@
             // afsluitenToolStripMenuItem
             // 
             this.afsluitenToolStripMenuItem.Name = "afsluitenToolStripMenuItem";
-            this.afsluitenToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.afsluitenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.afsluitenToolStripMenuItem.Text = "Afsluiten";
-            // 
-            // personeelToolStripMenuItem
-            // 
-            this.personeelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.medewerkerToevoegenToolStripMenuItem,
-            this.toevoegenToolStripMenuItem,
-            this.verlofToolStripMenuItem1});
-            this.personeelToolStripMenuItem.Enabled = false;
-            this.personeelToolStripMenuItem.Name = "personeelToolStripMenuItem";
-            this.personeelToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.personeelToolStripMenuItem.Text = "Personeel";
-            // 
-            // medewerkerToevoegenToolStripMenuItem
-            // 
-            this.medewerkerToevoegenToolStripMenuItem.Name = "medewerkerToevoegenToolStripMenuItem";
-            this.medewerkerToevoegenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.medewerkerToevoegenToolStripMenuItem.Text = "Overzicht";
-            this.medewerkerToevoegenToolStripMenuItem.Click += new System.EventHandler(this.medewerkerToevoegenToolStripMenuItem_Click);
-            // 
-            // toevoegenToolStripMenuItem
-            // 
-            this.toevoegenToolStripMenuItem.Name = "toevoegenToolStripMenuItem";
-            this.toevoegenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.toevoegenToolStripMenuItem.Text = "Toevoegen";
-            this.toevoegenToolStripMenuItem.Click += new System.EventHandler(this.toevoegenToolStripMenuItem_Click);
-            // 
-            // verlofToolStripMenuItem1
-            // 
-            this.verlofToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.overzichtToolStripMenuItem1,
-            this.toevoegenToolStripMenuItem1});
-            this.verlofToolStripMenuItem1.Name = "verlofToolStripMenuItem1";
-            this.verlofToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.verlofToolStripMenuItem1.Text = "Verlof";
-            // 
-            // overzichtToolStripMenuItem1
-            // 
-            this.overzichtToolStripMenuItem1.Name = "overzichtToolStripMenuItem1";
-            this.overzichtToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
-            this.overzichtToolStripMenuItem1.Text = "Overzicht";
-            // 
-            // toevoegenToolStripMenuItem1
-            // 
-            this.toevoegenToolStripMenuItem1.Name = "toevoegenToolStripMenuItem1";
-            this.toevoegenToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
-            this.toevoegenToolStripMenuItem1.Text = "Toevoegen";
             // 
             // magazijnToolStripMenuItem
             // 
@@ -148,20 +96,31 @@
             this.verlofToolStripMenuItem.Name = "verlofToolStripMenuItem";
             this.verlofToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.verlofToolStripMenuItem.Text = "Verlof";
+            this.verlofToolStripMenuItem.Click += new System.EventHandler(this.verlofToolStripMenuItem_Click);
             // 
             // loginToolStripMenuItem
             // 
+            this.loginToolStripMenuItem.Enabled = false;
             this.loginToolStripMenuItem.Name = "loginToolStripMenuItem";
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Visible = false;
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
-            // tODOToolStripMenuItem
+            // settingsToolStripMenuItem
             // 
-            this.tODOToolStripMenuItem.Enabled = false;
-            this.tODOToolStripMenuItem.Name = "tODOToolStripMenuItem";
-            this.tODOToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.tODOToolStripMenuItem.Text = "TODO";
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.databaseSettingsToolStripMenuItem});
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // databaseSettingsToolStripMenuItem
+            // 
+            this.databaseSettingsToolStripMenuItem.Name = "databaseSettingsToolStripMenuItem";
+            this.databaseSettingsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.databaseSettingsToolStripMenuItem.Text = "Database Settings";
+            this.databaseSettingsToolStripMenuItem.Click += new System.EventHandler(this.databaseSettingsToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -192,18 +151,13 @@
         private System.Windows.Forms.MenuStrip mainForm_menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem bestandToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem afsluitenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem personeelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem medewerkerToevoegenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem magazijnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tODOToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem overzichtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem invoerenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toevoegenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verlofToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verlofToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem overzichtToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toevoegenToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem databaseSettingsToolStripMenuItem;
     }
 }
 

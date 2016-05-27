@@ -13,3 +13,5 @@ C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegis
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\obj\x64\Debug\PersoneelsRegistratieSysteem.exe
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\obj\x64\Debug\PersoneelsRegistratieSysteem.pdb
 C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\obj\x64\Debug\PersoneelsRegistratieSysteem.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\obj\x64\Debug\PersoneelsRegistratieSysteem.Urenregistratie.verlof.resources
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\prs\PersoneelsRegistratieSysteem\obj\x64\Debug\PersoneelsRegistratieSysteem.Settings.database.resources

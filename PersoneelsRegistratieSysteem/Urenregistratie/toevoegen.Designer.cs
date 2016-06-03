@@ -41,10 +41,16 @@
             this.urenregistratie_dag_lbl = new System.Windows.Forms.Label();
             this.urenregistratie_datum_lbl = new System.Windows.Forms.Label();
             this.gewerkte_uren_combobox = new System.Windows.Forms.GroupBox();
+            this.urengewerktlbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.gewerkteuren_combobox.SuspendLayout();
             this.gewerkte_uren_combobox.SuspendLayout();
@@ -82,7 +88,7 @@
             this.gewerkteuren_combobox.Controls.Add(this.urenregistratie_begintijd_lbl);
             this.gewerkteuren_combobox.Controls.Add(this.urenregistratie_dag_lbl);
             this.gewerkteuren_combobox.Controls.Add(this.urenregistratie_datum_lbl);
-            this.gewerkteuren_combobox.Location = new System.Drawing.Point(12, 70);
+            this.gewerkteuren_combobox.Location = new System.Drawing.Point(12, 69);
             this.gewerkteuren_combobox.Name = "gewerkteuren_combobox";
             this.gewerkteuren_combobox.Size = new System.Drawing.Size(560, 98);
             this.gewerkteuren_combobox.TabIndex = 2;
@@ -110,7 +116,7 @@
             this.urenregistratie_eindtijd_combobox.Size = new System.Drawing.Size(121, 21);
             this.urenregistratie_eindtijd_combobox.TabIndex = 7;
             this.urenregistratie_eindtijd_combobox.Visible = false;
-            this.urenregistratie_eindtijd_combobox.SelectedIndexChanged += new System.EventHandler(this.urenregistratie_eindtijd_combobox_SelectedIndexChanged);
+            this.urenregistratie_eindtijd_combobox.SelectedIndexChanged += new System.EventHandler(this.urenregistratie_eindtijd_combobox_SelectedIndexChanged_1);
             // 
             // urenregistratie_begintijd_combobx
             // 
@@ -193,17 +199,37 @@
             // 
             // gewerkte_uren_combobox
             // 
+            this.gewerkte_uren_combobox.Controls.Add(this.button4);
+            this.gewerkte_uren_combobox.Controls.Add(this.label1);
             this.gewerkte_uren_combobox.Controls.Add(this.button3);
             this.gewerkte_uren_combobox.Controls.Add(this.button2);
             this.gewerkte_uren_combobox.Controls.Add(this.button1);
             this.gewerkte_uren_combobox.Controls.Add(this.dataGridView1);
-            this.gewerkte_uren_combobox.Location = new System.Drawing.Point(12, 175);
+            this.gewerkte_uren_combobox.Location = new System.Drawing.Point(12, 173);
             this.gewerkte_uren_combobox.Name = "gewerkte_uren_combobox";
             this.gewerkte_uren_combobox.Size = new System.Drawing.Size(560, 161);
             this.gewerkte_uren_combobox.TabIndex = 3;
             this.gewerkte_uren_combobox.TabStop = false;
             this.gewerkte_uren_combobox.Text = "Gewerkte Uren";
             this.gewerkte_uren_combobox.Visible = false;
+            // 
+            // urengewerktlbl
+            // 
+            this.urengewerktlbl.AutoSize = true;
+            this.urengewerktlbl.Location = new System.Drawing.Point(181, 368);
+            this.urengewerktlbl.Name = "urengewerktlbl";
+            this.urengewerktlbl.Size = new System.Drawing.Size(0, 13);
+            this.urengewerktlbl.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(366, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Uren Totaal";
             // 
             // button3
             // 
@@ -242,19 +268,46 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedHeaders;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.Location = new System.Drawing.Point(6, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(406, 127);
+            this.dataGridView1.Size = new System.Drawing.Size(354, 127);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(450, 108);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(99, 23);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Bereken Uren";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(316, 395);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
             // 
             // toevoegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 363);
+            this.ClientSize = new System.Drawing.Size(645, 420);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.gewerkte_uren_combobox);
+            this.Controls.Add(this.urengewerktlbl);
             this.Controls.Add(this.gewerkteuren_combobox);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -268,8 +321,10 @@
             this.gewerkteuren_combobox.ResumeLayout(false);
             this.gewerkteuren_combobox.PerformLayout();
             this.gewerkte_uren_combobox.ResumeLayout(false);
+            this.gewerkte_uren_combobox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -292,5 +347,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.Label urengewerktlbl;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label2;
     }
 }

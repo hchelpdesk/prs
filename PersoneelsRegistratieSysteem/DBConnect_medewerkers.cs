@@ -282,7 +282,7 @@ namespace PersoneelsRegistratieSysteem
             }
             catch (IOException ex)
             {
-                MessageBox.Show("Error , unable to backup!");
+                MessageBox.Show("Error: " + ex.ToString() + " unable to backup!");
             }
         }
         // Restore
@@ -314,7 +314,8 @@ namespace PersoneelsRegistratieSysteem
             }
             catch (IOException ex)
             {
-                MessageBox.Show("Error , unable to Restore!");
+                MessageBox.Show("Error: "+ ex.ToString() + "unable to Restore!");
+
             }
         }
 

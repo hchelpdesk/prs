@@ -1,12 +1,15 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace PersoneelsRegistratieSysteem.Urenregistratie
 {
     public partial class toevoegen : Form
     {
+        private Bitmap bitmap;
         public toevoegen()
         {
             InitializeComponent();
@@ -14,6 +17,7 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
 
         private void toevoegen_Load(object sender, EventArgs e)
         {
+
             #region medewerker_combobox
             // Werknemers ophalen uit de DB en in combobox weergeven.
             var connectionString = "server=127.0.0.1;Port=3307; uid=root; pwd=usbw; database=test; ";
@@ -106,6 +110,7 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
 
         private void urenregistratie_dag_combobx_SelectedIndexChanged(object sender, EventArgs e)
         {
+            urenregistratie_begintijd_combobx.Items.Clear();
             urenregistratie_begintijd_lbl.Visible = true;
             urenregistratie_begintijd_combobx.Visible = true;
             DateTime time = DateTime.Today;
@@ -118,6 +123,7 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
 
         private void urenregistratie_begintijd_combobx_SelectedIndexChanged(object sender, EventArgs e)
         {
+            urenregistratie_eindtijd_combobox.Items.Clear();
             urenregistratie_eindtijd_combobox.Visible = true;
             urenregistratie_eindtijd_lbl.Visible = true;
             DateTime time = DateTime.Today;
@@ -148,23 +154,20 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
                 dataGridView1.Columns[3].Name = "Eind";
                 dataGridView1.Columns[4].Name = "Medewerker";
 
-
+                
                 string[] row = new string[] { urenregistratie_dag_combobx.SelectedItem.ToString(), urenregistratie_datum_combobx.SelectedItem.ToString(), urenregistratie_begintijd_combobx.SelectedItem.ToString(), urenregistratie_eindtijd_combobox.SelectedItem.ToString(), urenreg_cmbboxemployees.SelectedItem.ToString() };
                 dataGridView1.Rows.Add(row);
-                /*
-                DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
-                cmb.HeaderText = "Select Data";
-                cmb.Name = "cmb";
-                cmb.MaxDropDownItems = 4;
-                cmb.Items.Add("True");
-                cmb.Items.Add("False");
-                dataGridView1.Columns.Add(cmb);
-                */
+
                 this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 urenregistratie_datum_combobx.Items.Remove(urenregistratie_datum_combobx.SelectedItem);
                 //urenregistratie_dag_combobx.Items.Remove(urenregistratie_dag_combobx.SelectedItem);
 
                 gewerkte_uren_combobox.Visible = true;
+                // Uren per dag uitrekenen en dat voor alle dagen die ingevuld zijn. 
+                // Vervolgens de gewerkte uren * aantal dagen = totaalgewerkteurenweek
+              
+
+
             }
         }
 
@@ -188,6 +191,8 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+
             string MyConnectionString = "Server=127.0.0.1; Port=3307; Database=test; Uid=root; Pwd=usbw";
             MySqlConnection connection = new MySqlConnection(MyConnectionString);
 
@@ -214,9 +219,50 @@ namespace PersoneelsRegistratieSysteem.Urenregistratie
                     MessageBox.Show(ex.Message);
                 }
             }
-            MessageBox.Show("Uren zijn verwerkt.");
+            MessageBox.Show("Je uren zijn verwerkt.");
             dataGridView1.Rows.Clear();
         }
 
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap bm = new Bitmap(this.dataGridView1.Width, this.dataGridView1.Height);
+            dataGridView1.DrawToBitmap(bm, new Rectangle(0, 0, this.dataGridView1.Width, this.dataGridView1.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+        }
+
+        private void urenregistratie_eindtijd_combobox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            urenregistratie_add_btn.Visible = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int counter;
+            for (counter = 0; counter < (dataGridView1.Rows.Count); counter++) // Kijken hoeveel rijen er zijn.
+            {
+                if (dataGridView1.Rows[counter].Cells["Start"].Value != null && dataGridView1.Rows[counter].Cells["Eind"] != null) // Als begin en eindtijd niet leeg zijn.
+                {
+                    for (counter = 0; counter < (dataGridView1.Rows.Count); counter++)
+                    {
+                        // Als beide niet leeg zijn, wil ik begin tijd weten en eindtijd en het aantal uur verschil tussen de 2
+                        // dataGridView1.Rows[counter]
+                        
+                        var starttijd = dataGridView1.Rows[counter].Cells["start"].Value.ToString();
+                        var eindtijd = dataGridView1.Rows[counter].Cells["eind"].Value.ToString();
+                        TimeSpan duration = DateTime.Parse(eindtijd).Subtract(DateTime.Parse(starttijd));
+
+                        MessageBox.Show(duration.ToString());
+
+                        urengewerktlbl.Text += duration.ToString();
+                     
+
+
+                    }
+
+
+                }
+            }
+        }
     }
 }
+

@@ -195,8 +195,10 @@
             // 
             this.db_passwordtxtbox.Location = new System.Drawing.Point(8, 155);
             this.db_passwordtxtbox.Name = "db_passwordtxtbox";
+            this.db_passwordtxtbox.PasswordChar = '*';
             this.db_passwordtxtbox.Size = new System.Drawing.Size(177, 20);
             this.db_passwordtxtbox.TabIndex = 11;
+            this.db_passwordtxtbox.UseSystemPasswordChar = true;
             // 
             // db_lbl
             // 
